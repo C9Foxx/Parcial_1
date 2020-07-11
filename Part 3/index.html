@@ -27,7 +27,15 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 */
 
 // CREA TU FUNCION challenge1 aqui:
-
+function challenge1(){
+    let nBotones = prompt("cuantos botones necesitas?");
+    for(let i = 0; i < nBotones; i++){
+        var targetDiv = document.getElementById("dummy");
+        var btn = document.createElement("BUTTON");
+        btn.textContent = nombres[i];
+        targetDiv.appendChild(btn);
+    }
+}
 
 
 /*
@@ -36,7 +44,12 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 
 // CREA TU FUNCION challenge2 2 aquí.
 
-
+function challenge2(){
+    for(let i = 0; i < nombres.length; i++){
+    nombres[i] = nombres[i].toUpperCase();
+    console.log(nombres[i]);
+}
+}
 
 /*
 
@@ -50,7 +63,36 @@ A) Define un objeto tipo "Dog" que reciba 3 parametros
 B) Crea 3 objectos siguiendo esa clase con diferentes valores
 
 eJ   var fido = new Dog("Fido","Cafe","Poodle")
+*/
 
+function challenge3(){
+    function Dog(name, color, type){
+        this.name = name;
+        this.color = color;
+        this.type = type;
+
+       //BONUS 
+        /*
+        printInfo : function(){
+            var msg = "Nombre: " + this.name + ", de color: " + this.color + ", raza: " + this.type;
+            console.log(msg);
+        }
+        */
+        
+    }
+
+
+    var fido = new Dog("Fido","Cafe","Poodle");
+    console.log(fido);
+    var poff = new Dog("Poff","Blanco","Chihuaha");
+    console.log(poff);
+    var mika = new Dog("Mika","Miel","Chihuaha");
+    console.log(mika);
+
+    //poff.printInfo();
+}
+
+/*
 
 *****BONUS**** 10  puntos
 
@@ -80,7 +122,7 @@ Deberia escribir en consola
 
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge3()">Challenge 3</button>
 
   
 <div id = "dummy">
